@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29168C702B1A323B00196CAD /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29168C6F2B1A323B00196CAD /* Connection.swift */; };
 		292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */; };
 		292DC5522B17A35D0052D096 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC5512B17A35D0052D096 /* ContentView.swift */; };
 		292DC5542B17A35E0052D096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292DC5532B17A35E0052D096 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29168C6F2B1A323B00196CAD /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		292DC54C2B17A35D0052D096 /* Swifty-Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty-Proteins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty_ProteinsApp.swift; sourceTree = "<group>"; };
 		292DC5512B17A35D0052D096 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				2998C80C2B1916930005B3E8 /* AtomDatas.swift */,
+				29168C6F2B1A323B00196CAD /* Connection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */,
+				29168C702B1A323B00196CAD /* Connection.swift in Sources */,
 				292DC5522B17A35D0052D096 /* ContentView.swift in Sources */,
 				292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,
@@ -466,6 +470,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +500,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

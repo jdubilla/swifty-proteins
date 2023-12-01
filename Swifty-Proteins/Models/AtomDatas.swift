@@ -8,8 +8,9 @@
 import Foundation
 
 struct AtomDatas {
-    var x: Double
-    var y: Double
-    var z: Double
+    var id: Int
+    var x: Float
+    var y: Float
+    var z: Float
     var type: String
 }
