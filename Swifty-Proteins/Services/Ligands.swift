@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import UIKit
 
 class Ligands: ObservableObject {
     
@@ -13,8 +15,8 @@ class Ligands: ObservableObject {
     var atomsDatas: [AtomDatas] = []
     var connections: [Connection] = []
             
-    func fetchLigandFile() async throws -> String {
-        let endpoint = "https://files.rcsb.org/ligands/view/001_ideal.sdf"
+    func fetchLigandFile(ligandName: String) async throws -> String {
+        let endpoint = "https://files.rcsb.org/ligands/view/\(ligandName)_ideal.sdf"
 
         guard let url = URL(string: endpoint) else {
             throw LigandError.invalidURL
@@ -44,13 +46,35 @@ class Ligands: ObservableObject {
             
             if (splitedLine.count == 16) {
                 if let x = Float(splitedLine[0]), let y = Float(splitedLine[1]), let z = Float(splitedLine[2]) {
-                    let atom: AtomDatas = AtomDatas(id: i, x: x, y: y, z: z, type: String(splitedLine[3]))
+                    let color = colorAtom(atom: String(splitedLine[3]))
+                    let atom: AtomDatas = AtomDatas(id: i, type: String(splitedLine[3]), x: x * 2, y: y * 2, z: z * 2, color: color)
                     i += 1
                     atomsDatas.append(atom)
                 }
             }
         }
         return atomsDatas
+    }
+    
+    func colorAtom(atom: String) -> UIColor {
+        switch atom {
+        case "H": return UIColor.white
+        case "C": return UIColor.black
+        case "N": return UIColor.blue
+        case "O": return UIColor.red
+        case "F", "Cl": return UIColor.green
+        case "Br": return UIColor(red: 0.54, green: 0.0, blue: 0.0, alpha: 1.0)
+        case "I": return UIColor(red: 0.58, green: 0.0, blue: 0.83, alpha: 1.0)
+        case "He", "Ne", "Ar", "Kr", "Xe": return UIColor.cyan
+        case "P": return UIColor.orange
+        case "S": return UIColor.yellow
+        case "B": return UIColor(red: 0.96, green: 0.89, blue: 0.69, alpha: 1.0)
+        case "Li", "Na", "K", "Rb", "Cs", "Fr": return UIColor.purple
+        case "Be", "Mg", "Ca", "Sr", "Ba", "Ra": return UIColor(red: 0.0, green: 0.39, blue: 0.0, alpha: 1.0)
+        case "Ti": return UIColor.gray
+        case "Fe": return UIColor(red: 0.67, green: 0.33, blue: 0.0, alpha: 1.0)
+        default: return UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0)
+        }
     }
     
     func getConnections(dataFile: String) -> [Connection] {
@@ -72,8 +96,8 @@ class Ligands: ObservableObject {
     }
 
     
-    func fetchLigands() async throws {
-        self.dataFile = try await fetchLigandFile()
+    func fetchLigands(ligandName: String) async throws {
+        self.dataFile = try await fetchLigandFile(ligandName: ligandName)
         self.atomsDatas = getLigandCoords(dataFile: dataFile)
         self.connections = getConnections(dataFile: dataFile)
     }
