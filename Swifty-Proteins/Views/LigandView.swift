@@ -40,6 +40,7 @@ struct LigandView: View {
                     Spacer()
                 }
             }
+            .navigationTitle(ligandName)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {

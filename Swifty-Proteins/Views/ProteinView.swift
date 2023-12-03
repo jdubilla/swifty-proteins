@@ -92,6 +92,7 @@ struct ProteinView: UIViewRepresentable {
 
     func addAtomsToScene(scene: SCNScene) {
         for atomData in atomsDatas where atomData.type != "H" {
+//            print("Atom")
             let atomNode = createAtomNode(atomData: atomData)
             atomNode.position = SCNVector3(
                 Float(atomData.x),
@@ -113,8 +114,24 @@ struct ProteinView: UIViewRepresentable {
     func addCamera(to scene: SCNScene, for scnView: SCNView) {
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(1, 0, 30)
 
+        var minX = self.atomsDatas[0].x
+        var maxX = self.atomsDatas[0].x
+        
+        for i in 0..<self.atomsDatas.count {
+            if (self.atomsDatas[i].x < minX) {
+                minX = self.atomsDatas[i].x
+            } else if (self.atomsDatas[i].x > maxX) {
+                maxX = self.atomsDatas[i].x
+            }
+        }
+        
+        let moyX = (minX + maxX) / 2
+        
+//        cameraNode.position = SCNVector3(1, 0, 30)
+//        cameraNode.position = SCNVector3(self.atomsDatas[0].x, self.atomsDatas[0].y, self.atomsDatas[0].z + 50)
+        cameraNode.position = SCNVector3(moyX, self.atomsDatas[0].y, self.atomsDatas[0].z + 60)
+        
         scene.rootNode.addChildNode(cameraNode)
         scnView.pointOfView = cameraNode
     }
@@ -132,6 +149,8 @@ struct ProteinView: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         
     }
+    
+
     
     func addConnectionsToScene(scene: SCNScene) {
         for connection in connections {
@@ -157,9 +176,10 @@ struct ProteinView: UIViewRepresentable {
             
             let bondMaterialFirstHalf = SCNMaterial()
             bondMaterialFirstHalf.diffuse.contents = fromAtom.color
-            
+
             let bondMaterialSecondHalf = SCNMaterial()
             bondMaterialSecondHalf.diffuse.contents = toAtom.color
+
             
             let firstHalfPosition = SCNVector3(
                 fromPosition.x + deltaX / 4,
@@ -182,8 +202,12 @@ struct ProteinView: UIViewRepresentable {
             let firstHalfNode = SCNNode(geometry: firstHalfGeometry)
             let secondHalfNode = SCNNode(geometry: secondHalfGeometry)
             
-            scene.rootNode.addChildNode(firstHalfNode)
-            scene.rootNode.addChildNode(secondHalfNode)
+            let connectionParentNode = SCNNode()
+
+            scene.rootNode.addChildNode(connectionParentNode)
+
+            connectionParentNode.addChildNode(firstHalfNode)
+            connectionParentNode.addChildNode(secondHalfNode)
             
             firstHalfNode.position = firstHalfPosition
             secondHalfNode.position = secondHalfPosition
@@ -239,3 +263,54 @@ extension SCNVector3 {
     }
 }
 
+
+
+
+
+//    func addConnectionsToScene(scene: SCNScene) {
+//            let bondMaterial = SCNMaterial()
+//            bondMaterial.diffuse.contents = UIColor.white
+//
+//            for connection in connections {
+//                guard let fromAtom = atomsDatas.first(where: { $0.id == connection.from }),
+//                      let toAtom = atomsDatas.first(where: { $0.id == connection.to }) else {
+//                    continue
+//                }
+//
+//                if (fromAtom.type == "H" || toAtom.type == "H") {
+//                    continue
+//                }
+//
+//                let fromPosition = SCNVector3(fromAtom.x, fromAtom.y, fromAtom.z)
+//                let toPosition = SCNVector3(toAtom.x, toAtom.y, toAtom.z)
+//
+//                let bondNode = SCNNode()
+//                scene.rootNode.addChildNode(bondNode)
+//
+//                let deltaX = toPosition.x - fromPosition.x
+//                let deltaY = toPosition.y - fromPosition.y
+//                let deltaZ = toPosition.z - fromPosition.z
+//
+//                let distance = sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ)
+//
+//
+//                let bondGeometry = SCNCylinder(radius: 0.05, height: CGFloat(distance))
+//                bondGeometry.materials = [bondMaterial]
+//
+//                bondNode.geometry = bondGeometry
+//
+//                bondNode.position = SCNVector3(
+//                    (fromPosition.x + toPosition.x) / 2,
+//                    (fromPosition.y + toPosition.y) / 2,
+//                    (fromPosition.z + toPosition.z) / 2
+//                )
+//
+//                let direction = SCNVector3(
+//                    toPosition.x - fromPosition.x,
+//                    toPosition.y - fromPosition.y,
+//                    toPosition.z - fromPosition.z
+//                )
+//
+//                bondNode.look(at: toPosition, up: direction, localFront: SCNVector3(0, 1, 0))
+//            }
+//        }

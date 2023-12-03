@@ -49,7 +49,6 @@ class Ligands: ObservableObject {
                     let color = colorAtom(atom: String(splitedLine[3]))
                     let atom: AtomDatas = AtomDatas(id: i, type: String(splitedLine[3]), x: x * 2, y: y * 2, z: z * 2, color: color)
                     i += 1
-                    print(atom.x)
                     atomsDatas.append(atom)
                 }
             }
