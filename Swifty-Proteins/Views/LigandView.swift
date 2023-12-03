@@ -18,26 +18,46 @@ struct LigandView: View {
     @State var errorMessage = ""
     @State var isLoading = true
     
+    @State private var isSharing = false
+    
     @State private var selectedAtom: String? = nil
     
+    @State private var sharedImage: UIImage?
+        
     var body: some View {
-        VStack {
-            if isLoading {
-                Text("Chargement...")
-            } else {
-                HStack {
-                    Text("Molecule: \(ligandName)")
-                    Spacer()
-                    if let selectedAtom = selectedAtom {
-                        Text("Selected Atom: \(selectedAtom)")
+            VStack {
+                if isLoading {
+                    Text("Chargement...")
+                } else {
+                    HStack {
+                        Spacer()
+                        if let selectedAtom = selectedAtom {
+                            Text("Selected Atom: \(selectedAtom)")
+                        }
                     }
+                    .padding()
+                    ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom, sharedImage: $sharedImage)
+                    Spacer()
                 }
-                .padding()
-                ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom)
-                
-                Spacer()
             }
-        }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        if let image = sharedImage {
+                            // Afficher le partage d'image
+                            isSharing = true
+                        }
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .disabled(sharedImage == nil)
+                }
+            }
+            .sheet(isPresented: $isSharing) {
+                if let image = sharedImage {
+                    ActivityViewController(activityItems: [image])
+                }
+            }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
         }
@@ -80,3 +100,31 @@ struct LigandView: View {
 #Preview {
     LigandView(ligandName: "001")
 }
+
+
+struct ActivityViewController: UIViewControllerRepresentable {
+    var activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        return activityViewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // Update the view controller if needed
+    }
+}
+
+
+//.toolbar {
+//    ToolbarItem(placement: .topBarTrailing) {
+//        Button(action: {
+//            isSharing = true
+//        }) {
+//            Image(systemName: "square.and.arrow.up")
+//        }
+//        .sheet(isPresented: $isSharing) {
+//
+//        }
+//    }
+//}.navigationTitle(ligandName)

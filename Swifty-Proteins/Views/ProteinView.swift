@@ -12,10 +12,26 @@ struct ProteinView: UIViewRepresentable {
     var atomsDatas: [AtomDatas]
     var connections: [Connection]
     @Binding var selectedAtomType: String?
+        
+    @Binding var sharedImage: UIImage?
     
     func makeUIView(context: Context) -> SCNView {
         let scene = SCNScene()
         let scnView = configureSceneView(scene: scene)
+        
+//        ForEach(atomsDatas) { atom in
+//            print(atom)
+//        }
+//        print(atomsDatas)
+//        for i in 0..<atomsDatas.count {
+//            print(atomsDatas[i].x)
+//            print(atomsDatas[i].y)
+//            print(atomsDatas[i].z)
+//            print(atomsDatas[i].type)
+//            print("\n\n")
+//        }
+//        print("\n\n")
+//        print(connections)
 
         scnView.scene = scene
         
@@ -26,10 +42,20 @@ struct ProteinView: UIViewRepresentable {
         addAtomsToScene(scene: scene)
         addConnectionsToScene(scene: scene)
         
-//        let scnView = configureSceneView(scene: scene)
         addCamera(to: scene, for: scnView)
         
+        context.coordinator.scnView = scnView
+        
+        DispatchQueue.main.async {
+            captureImage(context: context)
+        }
+
         return scnView
+    }
+
+    func captureImage(context: Context) {
+        guard let scnView = context.coordinator.scnView else { return }
+        self.sharedImage = scnView.snapshot()
     }
     
     func makeCoordinator() -> Coordinator {
@@ -38,6 +64,7 @@ struct ProteinView: UIViewRepresentable {
     
     class Coordinator: NSObject {
         var parent: ProteinView
+        var scnView: SCNView? // Ajoutez cette propriété
         
         init(_ parent: ProteinView) {
             self.parent = parent
@@ -187,7 +214,7 @@ struct ProteinView: UIViewRepresentable {
         return SCNVector3(a.y * b.z - a.z * b.y,
                          a.z * b.x - a.x * b.z,
                          a.x * b.y - a.y * b.x)
-    }
+    }  
 }
 
 

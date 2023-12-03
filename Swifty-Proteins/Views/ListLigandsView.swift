@@ -29,7 +29,7 @@ struct ListLigandsView: View {
                             .frame(height: 30)
                             .background(.gray.opacity(0.3))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                    }
+                    }.padding()
                     List(filteredLigands, id: \.self) { ligand in
                         NavigationLink {
                             LigandView(ligandName: ligand)
@@ -38,10 +38,10 @@ struct ListLigandsView: View {
                         }
 
                     }.listStyle(.plain)
+                        .padding()
                 }
             }
         }
-        .padding()
         .onAppear() {
             self.listLigands = getListLigands()
         }
