@@ -9,12 +9,12 @@ import SwiftUI
 import SceneKit
 
 struct ContentView: View {
-    
-    var body: some View {
-        ListLigandsView()
-    }
+
+	var body: some View {
+		ListLigandsView()
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }

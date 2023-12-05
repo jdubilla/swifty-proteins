@@ -1,0 +1,6 @@
+disabled_rules:
+  - identifier_name
+  - line_length
+  - type_name
+  - cyclomatic_complexity
+  - multiple_closures_with_trailing_closure
