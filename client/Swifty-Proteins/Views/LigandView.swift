@@ -44,10 +44,10 @@ struct LigandView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        if let image = sharedImage {
+//                        if let image = sharedImage {
                             // Afficher le partage d'image
                             isSharing = true
-                        }
+//                        }
                     }) {
                         Image(systemName: "square.and.arrow.up")
                     }

@@ -25,10 +25,10 @@ struct ListLigandsView: View {
             NavigationView {
                 VStack {
                     HStack {
-                        TextField("Rechercher", text: $searchText)
-                            .frame(height: 30)
-                            .background(.gray.opacity(0.3))
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+//                        TextField("Rechercher", text: $searchText)
+//                            .frame(height: 30)
+//                            .background(.gray.opacity(0.3))
+//                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }.padding()
                     List(filteredLigands, id: \.self) { ligand in
                         NavigationLink {
@@ -40,7 +40,7 @@ struct ListLigandsView: View {
                     }.listStyle(.plain)
                         .padding()
                 }
-            }
+            }.searchable(text: $searchText)
         }
         .onAppear() {
             self.listLigands = getListLigands()
