@@ -1,0 +1,36 @@
+version: '1'
+
+services:
+  #frontend:
+  #  build:
+  #    context: ./frontend
+  #  volumes:
+  #    - ./frontend:/usr/src/app
+  #  ports:
+  #    - "8080:8080"
+
+  mysql:
+    build:
+      context: ./db
+    container_name: mon_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: swiftyProteins
+    ports:
+      - "3306:3306"
+
+  node_app:
+    build:
+      context: ./server
+    container_name: mon_node_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    volumes:
+      - ./wait-for-it.sh:/wait-for-it.sh
+      #- ./coordsCity.json:/app/coordsCity.json
+      #- ./manFirstName.json:/app/manFirstName.json
+      #- ./womanFirstName.json:/app/womanFirstName.json
+      #- ./scriptUsers.js:/app/scriptUsers.js
+    command: ["/wait-for-it.sh", "mon_mysql:3306", "--", "node", "dist/app.js"]
