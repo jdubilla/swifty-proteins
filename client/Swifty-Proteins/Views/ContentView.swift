@@ -11,7 +11,8 @@ import SceneKit
 struct ContentView: View {
 
 	var body: some View {
-		ListLigandsView()
+		LoginView()
+//		ListLigandsView()
 	}
 }
 

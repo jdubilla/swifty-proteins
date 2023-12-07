@@ -18,6 +18,8 @@
 		2952ADEE2B1BC2DA008C205F /* ListLigandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */; };
 		2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952ADEF2B1BC8B8008C205F /* LigandView.swift */; };
 		2952ADF32B1BD26E008C205F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2952ADF22B1BD253008C205F /* ligands.txt */; };
+		29882C9D2B2220A200A32358 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9C2B2220A200A32358 /* LoginView.swift */; };
+		29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */; };
 		2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8092B18D15E0005B3E8 /* Ligands.swift */; };
 		2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C80C2B1916930005B3E8 /* AtomDatas.swift */; };
 		2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* ProteinView.swift */; };
@@ -55,6 +57,8 @@
 		2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLigandsView.swift; sourceTree = "<group>"; };
 		2952ADEF2B1BC8B8008C205F /* LigandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandView.swift; sourceTree = "<group>"; };
 		2952ADF22B1BD253008C205F /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
+		29882C9C2B2220A200A32358 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		2998C8092B18D15E0005B3E8 /* Ligands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligands.swift; sourceTree = "<group>"; };
 		2998C80C2B1916930005B3E8 /* AtomDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDatas.swift; sourceTree = "<group>"; };
 		2998C8152B1938750005B3E8 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		292DC54E2B17A35D0052D096 /* Swifty-Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				29882C9E2B2223AE00A32358 /* Helpers */,
 				2952ADF12B1BD1F5008C205F /* Resources */,
 				2998C8102B192C710005B3E8 /* Views */,
 				2998C80B2B19161B0005B3E8 /* Models */,
@@ -152,6 +157,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		29882C9E2B2223AE00A32358 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2998C8082B18D10F0005B3E8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 				2998C8152B1938750005B3E8 /* ProteinView.swift */,
 				2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */,
 				2952ADEF2B1BC8B8008C205F /* LigandView.swift */,
+				29882C9C2B2220A200A32358 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,7 +350,9 @@
 				2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */,
 				29168C702B1A323B00196CAD /* Connection.swift in Sources */,
 				292DC5522B17A35D0052D096 /* ContentView.swift in Sources */,
+				29882C9D2B2220A200A32358 /* LoginView.swift in Sources */,
 				2952ADEE2B1BC2DA008C205F /* ListLigandsView.swift in Sources */,
+				29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */,
 				292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */,
 				2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,
