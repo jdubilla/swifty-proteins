@@ -8,7 +8,7 @@ export const userExist = async (username: string): Promise<boolean> => {
 		const userResult: any = await new Promise((resolve, reject) => {
 			connection.query(userQuery, username, (checkUserErr: any, checkUserResults: any) => {
 				if (checkUserErr) {
-					reject(new Error('Une erreur est survenue lors de la vérification du nom d\'utilisateur.'));
+					reject(new Error('An error occurred while verifying the username'));
 				} else {
 					resolve(checkUserResults);
 				}

@@ -20,6 +20,7 @@ export const addUser = async (username: string, password: string) => {
 			})
 		})
 		const token = generateJWT(createUserResult.insertId);
+		
 		return token;
 	} catch (error) {
 		throw error;

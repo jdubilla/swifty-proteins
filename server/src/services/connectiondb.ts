@@ -3,8 +3,9 @@ import mysql from 'mysql2'
 let connection: mysql.Connection;
 
 export const createConnection = () => {
+	console.log(process.env.DB_USER)
 	connection = mysql.createConnection({
-		//host: 'mon_mysql',
+		// host: 'mon_mysql',
 		host: "127.0.0.1",
 		port: 3306,
 		user: process.env.DB_USER,
