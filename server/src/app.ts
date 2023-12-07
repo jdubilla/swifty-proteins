@@ -10,7 +10,6 @@ dotenv.config()
 
 createConnection()
 
-//app.use(cors());
 app.use(express.json());
 
 app.use('/authentication', authentication)
