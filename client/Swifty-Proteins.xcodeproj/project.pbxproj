@@ -20,9 +20,18 @@
 		2952ADF32B1BD26E008C205F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2952ADF22B1BD253008C205F /* ligands.txt */; };
 		29882C9D2B2220A200A32358 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9C2B2220A200A32358 /* LoginView.swift */; };
 		29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */; };
+		29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA22B23555A00A32358 /* ColorHexa.swift */; };
+		29882CA62B2358E900A32358 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA52B2358E900A32358 /* SigninButton.swift */; };
+		29882CA82B2358F300A32358 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA72B2358F300A32358 /* SignupButton.swift */; };
+		29882CAA2B235A9000A32358 /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA92B235A9000A32358 /* BackgroundImage.swift */; };
+		29882CAC2B235B0A00A32358 /* SigninSignupButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */; };
+		29882CAE2B23725F00A32358 /* SigninFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAD2B23725F00A32358 /* SigninFields.swift */; };
+		29882CB02B23726800A32358 /* SignupFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAF2B23726800A32358 /* SignupFields.swift */; };
 		2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8092B18D15E0005B3E8 /* Ligands.swift */; };
 		2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C80C2B1916930005B3E8 /* AtomDatas.swift */; };
 		2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* ProteinView.swift */; };
+		29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */; };
+		29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +68,18 @@
 		2952ADF22B1BD253008C205F /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		29882C9C2B2220A200A32358 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		29882CA22B23555A00A32358 /* ColorHexa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexa.swift; sourceTree = "<group>"; };
+		29882CA52B2358E900A32358 /* SigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
+		29882CA72B2358F300A32358 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
+		29882CA92B235A9000A32358 /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
+		29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninSignupButtons.swift; sourceTree = "<group>"; };
+		29882CAD2B23725F00A32358 /* SigninFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninFields.swift; sourceTree = "<group>"; };
+		29882CAF2B23726800A32358 /* SignupFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFields.swift; sourceTree = "<group>"; };
 		2998C8092B18D15E0005B3E8 /* Ligands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligands.swift; sourceTree = "<group>"; };
 		2998C80C2B1916930005B3E8 /* AtomDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDatas.swift; sourceTree = "<group>"; };
 		2998C8152B1938750005B3E8 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
+		29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecureField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +130,7 @@
 		292DC54E2B17A35D0052D096 /* Swifty-Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				29882CA12B23554A00A32358 /* Extensions */,
 				29882C9E2B2223AE00A32358 /* Helpers */,
 				2952ADF12B1BD1F5008C205F /* Resources */,
 				2998C8102B192C710005B3E8 /* Views */,
@@ -165,6 +184,30 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		29882CA12B23554A00A32358 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29882CA22B23555A00A32358 /* ColorHexa.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		29882CA42B2358BF00A32358 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				29882C9C2B2220A200A32358 /* LoginView.swift */,
+				29882CA52B2358E900A32358 /* SigninButton.swift */,
+				29882CA72B2358F300A32358 /* SignupButton.swift */,
+				29882CA92B235A9000A32358 /* BackgroundImage.swift */,
+				29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */,
+				29882CAD2B23725F00A32358 /* SigninFields.swift */,
+				29882CAF2B23726800A32358 /* SignupFields.swift */,
+				29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */,
+				29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2998C8082B18D10F0005B3E8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,11 +228,11 @@
 		2998C8102B192C710005B3E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29882CA42B2358BF00A32358 /* Login */,
 				292DC5512B17A35D0052D096 /* ContentView.swift */,
 				2998C8152B1938750005B3E8 /* ProteinView.swift */,
 				2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */,
 				2952ADEF2B1BC8B8008C205F /* LigandView.swift */,
-				29882C9C2B2220A200A32358 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,13 +391,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */,
+				29882CA62B2358E900A32358 /* SigninButton.swift in Sources */,
 				29168C702B1A323B00196CAD /* Connection.swift in Sources */,
 				292DC5522B17A35D0052D096 /* ContentView.swift in Sources */,
 				29882C9D2B2220A200A32358 /* LoginView.swift in Sources */,
+				29882CAA2B235A9000A32358 /* BackgroundImage.swift in Sources */,
 				2952ADEE2B1BC2DA008C205F /* ListLigandsView.swift in Sources */,
+				29882CAC2B235B0A00A32358 /* SigninSignupButtons.swift in Sources */,
 				29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */,
+				29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */,
 				292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */,
+				29882CB02B23726800A32358 /* SignupFields.swift in Sources */,
+				29882CA82B2358F300A32358 /* SignupButton.swift in Sources */,
 				2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */,
+				29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */,
+				29882CAE2B23725F00A32358 /* SigninFields.swift in Sources */,
+				29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,
 				2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */,
 			);

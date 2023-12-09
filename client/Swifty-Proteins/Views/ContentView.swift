@@ -10,9 +10,14 @@ import SceneKit
 
 struct ContentView: View {
 
+	@State var isLogin = false
+
 	var body: some View {
-		LoginView()
-//		ListLigandsView()
+		if !isLogin {
+			LoginView(isLogin: $isLogin)
+		} else {
+			ListLigandsView()
+		}
 	}
 }
 
