@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SigninFields: View {
 
-	@Binding var isLogin: Bool
+	@StateObject var authentication: Authentication
+//	@Binding var isLogin: Bool
 
 	@State var username = ""
 	@State var password = ""
@@ -20,20 +21,17 @@ struct SigninFields: View {
 		Spacer()
 			.frame(height: 25)
 		Button {
-			isLogin = true
+//			authentication.isAuthenticated = true
 		} label: {
 			Text("Signin")
 				.foregroundStyle(.white)
 				.font(.system(size: 30))
 				.fontWeight(.bold)
+				.frame(width: 300)
 		}
 		.padding()
 		.frame(width: 300)
 		.background(.accent)
 		.cornerRadius(50)
     }
-}
-
-#Preview {
-    SigninFields(isLogin: .constant(false))
 }

@@ -24,12 +24,6 @@ struct ListLigandsView: View {
 		VStack {
 			NavigationView {
 				VStack {
-					HStack {
-						//                        TextField("Rechercher", text: $searchText)
-						//                            .frame(height: 30)
-						//                            .background(.gray.opacity(0.3))
-						//                            .clipShape(RoundedRectangle(cornerRadius: 10))
-					}.padding()
 					List(filteredLigands, id: \.self) { ligand in
 						NavigationLink {
 							LigandView(ligandName: ligand)

@@ -29,7 +29,9 @@ function checkParams(username: string, password: string, confPassword: string) {
 
 export const signup = async (req: Request, res: Response) => {
 	try {
+		console.log("Signup call")
 		const { username, password, confPassword } = req.body
+		console.log(username, password, confPassword)
 
 	checkParams(username, password, confPassword)
 
@@ -38,9 +40,31 @@ export const signup = async (req: Request, res: Response) => {
 	}
 
 		const token = await addUser(username, password)
+		console.log(token)
 
 		res.status(200).json({token : token})
 	} catch(error: any) {
 		return res.status(500).json({ error: error.message });
 	}
+}
+
+export const test = async (req: Request, res: Response) => {
+	//try {
+	//	console.log("Signup call")
+	//	const { username, password, confPassword } = req.body
+	//	console.log(username, password, confPassword)
+
+	//checkParams(username, password, confPassword)
+
+	//if (await userExist(username)) {
+	//	return res.status(409).json({error: "Username is already taken"})
+	//}
+
+	//	const token = await addUser(username, password)
+	//	console.log(token)
+
+		res.status(200).json({OK : "OKTest"})
+	//} catch(error: any) {
+		//return res.status(500).json({ error: error.message });
+	//}
 }

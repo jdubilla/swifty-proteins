@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import authentication from './routes/authentication'
+import cors from 'cors'
 import { createConnection } from './services/connectiondb'
 
 const app = express()
@@ -10,6 +11,7 @@ dotenv.config()
 
 createConnection()
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/authentication', authentication)

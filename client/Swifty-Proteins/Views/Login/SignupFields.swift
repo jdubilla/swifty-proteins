@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SignupFields: View {
 
-	@Binding var isLogin: Bool
+//	@Binding var isLogin: Bool
+	@StateObject var authentication: Authentication
 
-	@State var username = ""
-	@State var password = ""
-	@State var confPassword = ""
+	@State var username = "Jbjbjb"
+	@State var password = "Aa1!!!"
+	@State var confPassword = "Aa1!!!"
 
     var body: some View {
 		LoginTextField(placeholder: "Username", value: $username)
@@ -22,20 +23,43 @@ struct SignupFields: View {
 		Spacer()
 			.frame(height: 25)
 		Button {
-			isLogin = true
+			Task {
+				do {
+					try await authentication.signup(username: username, password: password, confPassword: confPassword)
+//					try await authentication.test()
+				} catch {
+					print("Erreur !!!")
+					handleFetchError(error)
+				}
+			}
 		} label: {
 			Text("Signup")
 				.foregroundStyle(.white)
 				.font(.system(size: 30))
 				.fontWeight(.bold)
+				.frame(width: 300)
 		}
 		.padding()
 		.frame(width: 300)
 		.background(.accent)
 		.cornerRadius(50)
     }
-}
 
-#Preview {
-    SignupFields(isLogin: .constant(false))
+	func handleFetchError(_ error: Error) {
+		switch error {
+		case AuthenticationError.invalidData:
+			print("Invalid data")
+//			errorMessage = "Invalid data"
+//		case AuthenticationError.invalidReponse:
+//			errorMessage = "Invalid response"
+			print("Invalid response")
+		case AuthenticationError.invalidURL:
+//			errorMessage = "Invalid URL"
+			print("Invalid URL")
+		default:
+			print("Error default")
+//			errorMessage = "Invalid URL \(error.localizedDescription)"
+		}
+//		showAlert.toggle()
+	}
 }

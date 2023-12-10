@@ -32,6 +32,7 @@
 		2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* ProteinView.swift */; };
 		29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */; };
 		29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */; };
+		29BC1D4D2B24A36700C8DE8B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4C2B24A36700C8DE8B /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		2998C8152B1938750005B3E8 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
 		29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecureField.swift; sourceTree = "<group>"; };
+		29BC1D4C2B24A36700C8DE8B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				2998C8092B18D15E0005B3E8 /* Ligands.swift */,
+				29BC1D4C2B24A36700C8DE8B /* Authentication.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */,
 				29882CA62B2358E900A32358 /* SigninButton.swift in Sources */,
 				29168C702B1A323B00196CAD /* Connection.swift in Sources */,
+				29BC1D4D2B24A36700C8DE8B /* Authentication.swift in Sources */,
 				292DC5522B17A35D0052D096 /* ContentView.swift in Sources */,
 				29882C9D2B2220A200A32358 /* LoginView.swift in Sources */,
 				29882CAA2B235A9000A32358 /* BackgroundImage.swift in Sources */,

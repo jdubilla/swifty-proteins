@@ -20,6 +20,7 @@ struct LoginTextField: View {
 			.cornerRadius(50)
 			.frame(width: 300)
 			.font(.system(size: 23))
+			.disableAutocorrection(true)
     }
 }
 

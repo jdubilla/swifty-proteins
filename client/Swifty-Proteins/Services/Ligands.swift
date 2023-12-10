@@ -94,31 +94,10 @@ class Ligands: ObservableObject {
 		return connections
 	}
 
-	func fetchTest() async throws {
-		let endpoint = "http://localhost:3000/"
-
-		guard let url = URL(string: endpoint) else {
-			throw LigandError.invalidURL
-		}
-
-		let (data, response) = try await URLSession.shared.data(from: url)
-
-		guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-			throw LigandError.invalidReponse
-		}
-
-		let dataFile = String(data: data, encoding: .utf8)
-		guard let dataFile = dataFile else {
-			throw LigandError.invalidData
-		}
-		print(dataFile)
-	}
-
 	func fetchLigands(ligandName: String) async throws {
 		self.dataFile = try await fetchLigandFile(ligandName: ligandName)
 		self.atomsDatas = getLigandCoords(dataFile: dataFile)
 		self.connections = getConnections(dataFile: dataFile)
-//		try await fetchTest()
 	}
 }
 
