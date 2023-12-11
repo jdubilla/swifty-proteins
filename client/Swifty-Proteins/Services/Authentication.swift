@@ -47,7 +47,11 @@ class Authentication: ObservableObject {
 					self.isAuthenticated = true
 				}
 			} else {
-				throw AuthenticationError.invalidData
+				if httpResponse.statusCode == 409 {
+					throw AuthenticationError.invalidUsername
+				} else {
+					throw AuthenticationError.invalidData
+				}
 			}
 		} catch {
 			throw error
@@ -60,6 +64,7 @@ enum AuthenticationError: Error {
 	case invalidBodyData
 	case invalidData
 	case invalidResponse
+	case invalidUsername
 }
 
 struct TokenResponse: Decodable {

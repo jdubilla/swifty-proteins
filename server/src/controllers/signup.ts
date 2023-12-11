@@ -19,7 +19,7 @@ function checkParams(username: string, password: string, confPassword: string) {
 		throw new Error("Missing required params")
 	}
 
-	if (username.length < 3 || username.length > 10) {
+	if (username.length <= 3 || username.length > 15) {
 		throw new Error("Bad username")
 	}
 

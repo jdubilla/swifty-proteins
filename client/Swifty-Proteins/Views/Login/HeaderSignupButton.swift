@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupButton: View {
+struct HeaderSignupButton: View {
 
 	@Binding var signin: Bool
 	@Binding var barOffset: CGFloat

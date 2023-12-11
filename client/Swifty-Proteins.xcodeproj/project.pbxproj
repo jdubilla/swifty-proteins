@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290AEDF02B27403C001984FB /* CheckSignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDEF2B27403C001984FB /* CheckSignupField.swift */; };
+		290AEDF42B2757F0001984FB /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF32B2757F0001984FB /* UsernameTextField.swift */; };
+		290AEDF62B27582F001984FB /* PasswordFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF52B27582F001984FB /* PasswordFields.swift */; };
+		290AEDF82B2759A3001984FB /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF72B2759A3001984FB /* SignupButton.swift */; };
 		29168C702B1A323B00196CAD /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29168C6F2B1A323B00196CAD /* Connection.swift */; };
 		292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */; };
 		292DC5522B17A35D0052D096 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC5512B17A35D0052D096 /* ContentView.swift */; };
@@ -21,12 +25,12 @@
 		29882C9D2B2220A200A32358 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9C2B2220A200A32358 /* LoginView.swift */; };
 		29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */; };
 		29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA22B23555A00A32358 /* ColorHexa.swift */; };
-		29882CA62B2358E900A32358 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA52B2358E900A32358 /* SigninButton.swift */; };
-		29882CA82B2358F300A32358 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA72B2358F300A32358 /* SignupButton.swift */; };
+		29882CA62B2358E900A32358 /* HeaderSigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA52B2358E900A32358 /* HeaderSigninButton.swift */; };
+		29882CA82B2358F300A32358 /* HeaderSignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA72B2358F300A32358 /* HeaderSignupButton.swift */; };
 		29882CAA2B235A9000A32358 /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA92B235A9000A32358 /* BackgroundImage.swift */; };
 		29882CAC2B235B0A00A32358 /* SigninSignupButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */; };
-		29882CAE2B23725F00A32358 /* SigninFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAD2B23725F00A32358 /* SigninFields.swift */; };
-		29882CB02B23726800A32358 /* SignupFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAF2B23726800A32358 /* SignupFields.swift */; };
+		29882CAE2B23725F00A32358 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAD2B23725F00A32358 /* Signin.swift */; };
+		29882CB02B23726800A32358 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAF2B23726800A32358 /* Signup.swift */; };
 		2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8092B18D15E0005B3E8 /* Ligands.swift */; };
 		2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C80C2B1916930005B3E8 /* AtomDatas.swift */; };
 		2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* ProteinView.swift */; };
@@ -53,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290AEDEF2B27403C001984FB /* CheckSignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSignupField.swift; sourceTree = "<group>"; };
+		290AEDF32B2757F0001984FB /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
+		290AEDF52B27582F001984FB /* PasswordFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFields.swift; sourceTree = "<group>"; };
+		290AEDF72B2759A3001984FB /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 		29168C6F2B1A323B00196CAD /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		292DC54C2B17A35D0052D096 /* Swifty-Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty-Proteins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty_ProteinsApp.swift; sourceTree = "<group>"; };
@@ -70,12 +78,12 @@
 		29882C9C2B2220A200A32358 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		29882CA22B23555A00A32358 /* ColorHexa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexa.swift; sourceTree = "<group>"; };
-		29882CA52B2358E900A32358 /* SigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
-		29882CA72B2358F300A32358 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
+		29882CA52B2358E900A32358 /* HeaderSigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSigninButton.swift; sourceTree = "<group>"; };
+		29882CA72B2358F300A32358 /* HeaderSignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSignupButton.swift; sourceTree = "<group>"; };
 		29882CA92B235A9000A32358 /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninSignupButtons.swift; sourceTree = "<group>"; };
-		29882CAD2B23725F00A32358 /* SigninFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninFields.swift; sourceTree = "<group>"; };
-		29882CAF2B23726800A32358 /* SignupFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFields.swift; sourceTree = "<group>"; };
+		29882CAD2B23725F00A32358 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
+		29882CAF2B23726800A32358 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2998C8092B18D15E0005B3E8 /* Ligands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligands.swift; sourceTree = "<group>"; };
 		2998C80C2B1916930005B3E8 /* AtomDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDatas.swift; sourceTree = "<group>"; };
 		2998C8152B1938750005B3E8 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
@@ -109,6 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290AEDF12B2756BF001984FB /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				29882CAD2B23725F00A32358 /* Signin.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		290AEDF22B2756C6001984FB /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				29882CAF2B23726800A32358 /* Signup.swift */,
+				290AEDEF2B27403C001984FB /* CheckSignupField.swift */,
+				290AEDF32B2757F0001984FB /* UsernameTextField.swift */,
+				290AEDF52B27582F001984FB /* PasswordFields.swift */,
+				290AEDF72B2759A3001984FB /* SignupButton.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		292DC5432B17A35D0052D096 = {
 			isa = PBXGroup;
 			children = (
@@ -197,14 +225,14 @@
 		29882CA42B2358BF00A32358 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				290AEDF22B2756C6001984FB /* Signup */,
+				290AEDF12B2756BF001984FB /* Signin */,
 				29882C9C2B2220A200A32358 /* LoginView.swift */,
-				29882CA52B2358E900A32358 /* SigninButton.swift */,
-				29882CA72B2358F300A32358 /* SignupButton.swift */,
 				29882CA92B235A9000A32358 /* BackgroundImage.swift */,
 				29882CAB2B235B0A00A32358 /* SigninSignupButtons.swift */,
-				29882CAD2B23725F00A32358 /* SigninFields.swift */,
-				29882CAF2B23726800A32358 /* SignupFields.swift */,
+				29882CA72B2358F300A32358 /* HeaderSignupButton.swift */,
 				29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */,
+				29882CA52B2358E900A32358 /* HeaderSigninButton.swift */,
 				29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */,
 			);
 			path = Login;
@@ -394,10 +422,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */,
-				29882CA62B2358E900A32358 /* SigninButton.swift in Sources */,
+				290AEDF02B27403C001984FB /* CheckSignupField.swift in Sources */,
+				29882CA62B2358E900A32358 /* HeaderSigninButton.swift in Sources */,
 				29168C702B1A323B00196CAD /* Connection.swift in Sources */,
 				29BC1D4D2B24A36700C8DE8B /* Authentication.swift in Sources */,
+				290AEDF62B27582F001984FB /* PasswordFields.swift in Sources */,
 				292DC5522B17A35D0052D096 /* ContentView.swift in Sources */,
+				290AEDF82B2759A3001984FB /* SignupButton.swift in Sources */,
 				29882C9D2B2220A200A32358 /* LoginView.swift in Sources */,
 				29882CAA2B235A9000A32358 /* BackgroundImage.swift in Sources */,
 				2952ADEE2B1BC2DA008C205F /* ListLigandsView.swift in Sources */,
@@ -405,14 +436,15 @@
 				29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */,
 				29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */,
 				292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */,
-				29882CB02B23726800A32358 /* SignupFields.swift in Sources */,
-				29882CA82B2358F300A32358 /* SignupButton.swift in Sources */,
+				29882CB02B23726800A32358 /* Signup.swift in Sources */,
+				29882CA82B2358F300A32358 /* HeaderSignupButton.swift in Sources */,
 				2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */,
 				29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */,
-				29882CAE2B23725F00A32358 /* SigninFields.swift in Sources */,
+				29882CAE2B23725F00A32358 /* Signin.swift in Sources */,
 				29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,
 				2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */,
+				290AEDF42B2757F0001984FB /* UsernameTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

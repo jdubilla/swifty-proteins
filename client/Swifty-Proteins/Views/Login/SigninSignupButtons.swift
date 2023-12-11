@@ -18,8 +18,8 @@ struct SigninSignupButtons: View {
 	var body: some View {
 		GeometryReader { geometry in
 			HStack(spacing: 40) {
-				SigninButton(signin: $signin, barOffset: $barOffset, fontColorButton: fontColorButton, geometry: geometry)
-				SignupButton(signin: $signin, barOffset: $barOffset, fontColorButton: fontColorButton, geometry: geometry)
+				HeaderSigninButton(signin: $signin, barOffset: $barOffset, fontColorButton: fontColorButton, geometry: geometry)
+				HeaderSignupButton(signin: $signin, barOffset: $barOffset, fontColorButton: fontColorButton, geometry: geometry)
 			}
 			.padding()
 			.onAppear {

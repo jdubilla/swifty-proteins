@@ -10,11 +10,9 @@ import SwiftUI
 struct LoginView: View {
 
 	@StateObject var authentication: Authentication
-//	@Binding var isLogin: Bool
 
 	@State var signin = true
 	let fontColorButton: UInt = 0x5680E9
-//	@StateObject var authentication = Authentication()
 
 	var body: some View {
 		ZStack {
@@ -24,13 +22,13 @@ struct LoginView: View {
 				Spacer()
 					.frame(height: 10)
 				if signin {
-						SigninFields(authentication: authentication)
+						Signin(authentication: authentication)
 				} else {
-					SignupFields(authentication: authentication)
+					Signup(authentication: authentication)
 				}
 				Spacer()
 			}
-			.frame(width: 325, height: signin ? 325 : 400)
+			.frame(width: 325, height: signin ? 325 : 525)
 			.background(VisualEffectBlur(blurStyle: .light))
 			.clipShape(RoundedRectangle(cornerRadius: 30.0))
 		}

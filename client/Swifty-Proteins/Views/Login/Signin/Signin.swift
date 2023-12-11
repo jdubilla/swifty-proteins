@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SigninFields: View {
+struct Signin: View {
 
 	@StateObject var authentication: Authentication
 //	@Binding var isLogin: Bool

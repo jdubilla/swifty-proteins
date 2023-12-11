@@ -11,9 +11,10 @@ struct LoginSecureField: View {
 
 	var placeholder: String
 	@Binding var value: String
+//	@State var displayValue = ""
 
 	var body: some View {
-		TextField("", text: $value, prompt: Text("\(placeholder)").foregroundColor(.blue))
+		SecureField("", text: $value, prompt: Text("\(placeholder)").foregroundColor(.blue))
 			.padding()
 			.opacity(0.5)
 			.background(.white)
@@ -22,11 +23,6 @@ struct LoginSecureField: View {
 			.font(.system(size: 23))
 			.autocapitalization(.none)
 			.disableAutocorrection(true)
-			.onChange(of: value) { newValue in
-				if newValue.count > 0 {
-					value = String(repeating: "•", count: newValue.count)
-				}
-			}
 	}
 }
 
