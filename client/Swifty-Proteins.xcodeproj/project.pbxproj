@@ -11,6 +11,7 @@
 		290AEDF42B2757F0001984FB /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF32B2757F0001984FB /* UsernameTextField.swift */; };
 		290AEDF62B27582F001984FB /* PasswordFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF52B27582F001984FB /* PasswordFields.swift */; };
 		290AEDF82B2759A3001984FB /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDF72B2759A3001984FB /* SignupButton.swift */; };
+		290AEDFB2B2785F5001984FB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290AEDFA2B2785F5001984FB /* Keychain.swift */; };
 		29168C702B1A323B00196CAD /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29168C6F2B1A323B00196CAD /* Connection.swift */; };
 		292DC5502B17A35D0052D096 /* Swifty_ProteinsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */; };
 		292DC5522B17A35D0052D096 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC5512B17A35D0052D096 /* ContentView.swift */; };
@@ -61,6 +62,7 @@
 		290AEDF32B2757F0001984FB /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		290AEDF52B27582F001984FB /* PasswordFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFields.swift; sourceTree = "<group>"; };
 		290AEDF72B2759A3001984FB /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
+		290AEDFA2B2785F5001984FB /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		29168C6F2B1A323B00196CAD /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		292DC54C2B17A35D0052D096 /* Swifty-Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty-Proteins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty_ProteinsApp.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		290AEDF92B2785D7001984FB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				290AEDFA2B2785F5001984FB /* Keychain.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		292DC5432B17A35D0052D096 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		292DC54E2B17A35D0052D096 /* Swifty-Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				290AEDF92B2785D7001984FB /* Utilities */,
 				29882CA12B23554A00A32358 /* Extensions */,
 				29882C9E2B2223AE00A32358 /* Helpers */,
 				2952ADF12B1BD1F5008C205F /* Resources */,
@@ -440,6 +451,7 @@
 				29882CA82B2358F300A32358 /* HeaderSignupButton.swift in Sources */,
 				2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */,
 				29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */,
+				290AEDFB2B2785F5001984FB /* Keychain.swift in Sources */,
 				29882CAE2B23725F00A32358 /* Signin.swift in Sources */,
 				29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,

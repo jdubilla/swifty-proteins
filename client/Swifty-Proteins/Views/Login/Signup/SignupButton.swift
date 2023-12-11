@@ -24,7 +24,6 @@ struct SignupButton: View {
 				do {
 					asyncOperation = true
 					try await authentication.signup(username: username, password: password, confPassword: confPassword)
-					sleep(500000000)
 					asyncOperation = false
 				} catch {
 					handleFetchError(error)
@@ -62,6 +61,9 @@ struct SignupButton: View {
 		switch error {
 		case AuthenticationError.invalidData:
 			print("Invalid data")
+			errorMessage = "An error occurred. Please try again later."
+		case AuthenticationError.invalidResponse:
+			print("Invalid response")
 			errorMessage = "An error occurred. Please try again later."
 		case AuthenticationError.invalidUsername:
 			print("Username already taken")

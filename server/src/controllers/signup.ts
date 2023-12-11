@@ -29,9 +29,7 @@ function checkParams(username: string, password: string, confPassword: string) {
 
 export const signup = async (req: Request, res: Response) => {
 	try {
-		console.log("Signup call")
 		const { username, password, confPassword } = req.body
-		console.log(username, password, confPassword)
 
 	checkParams(username, password, confPassword)
 

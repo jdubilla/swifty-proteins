@@ -50,7 +50,6 @@ struct Signup: View {
 	}
 
 	func disabledButton() {
-//		return(
 		self.disabledBtn = !isUsernameValid ||
 			!isPasswordLenValid ||
 			!isSamePasswordValid ||
@@ -58,13 +57,10 @@ struct Signup: View {
 			!isPasswordMinValid ||
 			!isPasswordMajValid ||
 			!isPasswordNumberValid
-//			disabledBtn
-//		print(disabledBtn)
-//		)
 	}
 }
 
-//struct Signup: View {
+// struct Signup: View {
 //
 //	@StateObject var authentication: Authentication
 //
@@ -200,4 +196,4 @@ struct Signup: View {
 //		}
 //		showAlert.toggle()
 //	}
-//}
+// }
