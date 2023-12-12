@@ -11,8 +11,8 @@ struct Signin: View {
 
 	@StateObject var authentication: Authentication
 
-	@State var username = ""
-	@State var password = ""
+	@State var username = "Bubonn"
+	@State var password = "aA!111"
 	@State var disabledButton = true
 	@State var asyncOperation = false
 	@State var errorMessage = ""
@@ -36,9 +36,9 @@ struct Signin: View {
 						asyncOperation = true
 						try await authentication.signin(username: username, password: password)
 						saveTokenToKeychain(token: authentication.token)
-						if let token = getTokenFromKeychain() {
-							print("TEST TOKEN", token)
-						}
+//						if let token = getTokenFromKeychain() {
+//							print("TEST TOKEN", token)
+//						}
 						asyncOperation = false
 					} catch {
 						handleFetchError(error)

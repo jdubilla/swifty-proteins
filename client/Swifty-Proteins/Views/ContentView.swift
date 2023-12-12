@@ -16,7 +16,7 @@ struct ContentView: View {
 		if !authentication.isAuthenticated {
 			LoginView(authentication: authentication)
 		} else {
-			ListLigandsView()
+			ListLigandsView(authentication: authentication)
 		}
 	}
 }

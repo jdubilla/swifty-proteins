@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ListLigandsView: View {
 
+	@StateObject var authentication: Authentication
+
 	@State var searchText = ""
 	@State var listLigands: [String] = []
+	@Environment(\.scenePhase) var scenePhase
 
 	var filteredLigands: [String] {
 		if searchText.isEmpty {
@@ -38,6 +41,11 @@ struct ListLigandsView: View {
 		.onAppear {
 			self.listLigands = getListLigands()
 		}
+		.onChange(of: scenePhase, perform: { newScenePhase in
+			if newScenePhase == .inactive {
+				authentication.isAuthenticated = false
+			}
+		})
 	}
 
 	func getListLigands() -> [String] {
@@ -54,8 +62,4 @@ struct ListLigandsView: View {
 		}
 		return []
 	}
-}
-
-#Preview {
-	ListLigandsView()
 }
