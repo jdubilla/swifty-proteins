@@ -26,15 +26,21 @@ struct LigandView: View {
 			if isLoading {
 				Text("Chargement...")
 			} else {
-				HStack {
-					Spacer()
-					if let selectedAtom = selectedAtom {
-						Text("Selected Atom: \(selectedAtom)")
+				ZStack {
+					ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom, sharedImage: $sharedImage)
+					HStack(alignment: .center) {
+						if let selectedAtom = selectedAtom {
+							Text("Selected Atom: \(selectedAtom)")
+								.frame(height: 30)
+								.padding()
+								.background(.gray.opacity(0.7))
+								.foregroundStyle(.white)
+								.clipShape(RoundedRectangle(cornerRadius: 130))
+								.offset(y: 200)
+								.shadow(color: .gray, radius: 30)
+						}
 					}
 				}
-				.padding()
-				ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom, sharedImage: $sharedImage)
-				Spacer()
 			}
 		}
 		.navigationTitle(ligandName)
