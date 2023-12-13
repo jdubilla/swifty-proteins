@@ -24,7 +24,7 @@ struct LigandView: View {
 	var body: some View {
 		VStack {
 			if isLoading {
-				Text("Chargement...")
+				LoadingLigandView()
 			} else {
 				ZStack {
 					ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom, sharedImage: $sharedImage)
