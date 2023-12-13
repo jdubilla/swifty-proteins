@@ -19,6 +19,8 @@ struct Signin: View {
 	@State var errorMessage = ""
 	@State var showAlert = false
 
+	@State var test = false
+
 	@Environment(\.scenePhase) private var scenePhase
 
 	var body: some View {
@@ -64,7 +66,8 @@ struct Signin: View {
 			Text(errorMessage)
 		}
 		.onChange(of: scenePhase) { newPhase in
-			if newPhase == .active {
+			if newPhase == .active && test == false {
+				print("ACTIVE")
 				Task {
 					let token = getTokenFromKeychain()
 					if let token = token {
@@ -74,6 +77,8 @@ struct Signin: View {
 						}
 					}
 				}
+			} else if newPhase == .background || newPhase == .inactive {
+				test = false
 			}
 		}
 	}
@@ -94,6 +99,8 @@ struct Signin: View {
 					print("authenticated successfully")
 				} else {
 					print("there was a problem")
+					test = true
+					return
 				}
 			}
 		} else {
