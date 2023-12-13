@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LocalAuthentication
 
 struct Signin: View {
 
@@ -17,6 +18,8 @@ struct Signin: View {
 	@State var asyncOperation = false
 	@State var errorMessage = ""
 	@State var showAlert = false
+
+	@Environment(\.scenePhase) private var scenePhase
 
 	var body: some View {
 		VStack {
@@ -36,9 +39,6 @@ struct Signin: View {
 						asyncOperation = true
 						try await authentication.signin(username: username, password: password)
 						saveTokenToKeychain(token: authentication.token)
-//						if let token = getTokenFromKeychain() {
-//							print("TEST TOKEN", token)
-//						}
 						asyncOperation = false
 					} catch {
 						handleFetchError(error)
@@ -62,6 +62,42 @@ struct Signin: View {
 
 		} message: {
 			Text(errorMessage)
+		}
+		.onChange(of: scenePhase) { newPhase in
+			if newPhase == .active {
+				Task {
+					let token = getTokenFromKeychain()
+					if let token = token {
+						let isValidToken = await authentication.checkToken(token: token)
+						if isValidToken {
+							authenticate()
+						}
+					}
+				}
+			}
+		}
+	}
+
+	func authenticate() {
+		print("authenticate()")
+		let context = LAContext()
+		var error: NSError?
+
+		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+			let reason = "We need to unlock your data."
+
+			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
+				if success {
+					DispatchQueue.main.async {
+						authentication.isAuthenticated = true
+					}
+					print("authenticated successfully")
+				} else {
+					print("there was a problem")
+				}
+			}
+		} else {
+			print("no biometrics")
 		}
 	}
 

@@ -98,6 +98,33 @@ class Authentication: ObservableObject {
 			throw error
 		}
 	}
+
+	func checkToken(token: String) async -> Bool {
+		print(token)
+		let endpoint = "\(baseUrl)/authentication/checkToken?token=\(token)"
+
+		guard let url = URL(string: endpoint) else {
+			return false
+		}
+
+		do {
+			var request = URLRequest(url: url)
+			request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+			let (_, response) = try await URLSession.shared.data(for: request)
+
+			guard let httpResponse = response as? HTTPURLResponse else {
+				throw AuthenticationError.invalidResponse
+			}
+			if httpResponse.statusCode == 200 {
+				return true
+			} else {
+				return false
+			}
+		} catch {
+			return false
+		}
+	}
 }
 
 enum AuthenticationError: Error {

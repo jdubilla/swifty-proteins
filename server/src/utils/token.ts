@@ -18,6 +18,8 @@ export function generateJWT(userId: number) {
 }
 
 export async function verifyToken(token: string, secretKey: string) {
+	console.log(token)
+	console.log(secretKey)
 	return new Promise((resolve, reject) => {
 		jwt.verify(token, secretKey, (err, user) => {
 			if (err) {
