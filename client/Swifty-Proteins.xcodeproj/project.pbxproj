@@ -35,6 +35,7 @@
 		2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8092B18D15E0005B3E8 /* Ligands.swift */; };
 		2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C80C2B1916930005B3E8 /* AtomDatas.swift */; };
 		2998C8162B1938750005B3E8 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* ProteinView.swift */; };
+		29A70E372B29E18F0065617C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A70E362B29E18F0065617C /* Launch Screen.storyboard */; };
 		29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */; };
 		29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */; };
 		29BC1D4D2B24A36700C8DE8B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4C2B24A36700C8DE8B /* Authentication.swift */; };
@@ -89,6 +90,8 @@
 		2998C8092B18D15E0005B3E8 /* Ligands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligands.swift; sourceTree = "<group>"; };
 		2998C80C2B1916930005B3E8 /* AtomDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDatas.swift; sourceTree = "<group>"; };
 		2998C8152B1938750005B3E8 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
+		29A70E352B29E0BE0065617C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29A70E362B29E18F0065617C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecureField.swift; sourceTree = "<group>"; };
 		29BC1D4C2B24A36700C8DE8B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		292DC54E2B17A35D0052D096 /* Swifty-Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				29A70E352B29E0BE0065617C /* Info.plist */,
 				290AEDF92B2785D7001984FB /* Utilities */,
 				29882CA12B23554A00A32358 /* Extensions */,
 				29882C9E2B2223AE00A32358 /* Helpers */,
@@ -180,6 +184,7 @@
 				292DC54F2B17A35D0052D096 /* Swifty_ProteinsApp.swift */,
 				292DC5532B17A35E0052D096 /* Assets.xcassets */,
 				292DC5552B17A35E0052D096 /* Preview Content */,
+				29A70E362B29E18F0065617C /* Launch Screen.storyboard */,
 			);
 			path = "Swifty-Proteins";
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 			files = (
 				292DC5572B17A35E0052D096 /* Preview Assets.xcassets in Resources */,
 				2952ADF32B1BD26E008C205F /* ligands.txt in Resources */,
+				29A70E372B29E18F0065617C /* Launch Screen.storyboard in Resources */,
 				292DC5542B17A35E0052D096 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,10 +629,11 @@
 				DEVELOPMENT_TEAM = K6C5P3CXYZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swifty-Proteins/Info.plist";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
@@ -654,10 +661,11 @@
 				DEVELOPMENT_TEAM = K6C5P3CXYZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swifty-Proteins/Info.plist";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
