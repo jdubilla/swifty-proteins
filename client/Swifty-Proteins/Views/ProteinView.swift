@@ -33,7 +33,9 @@ struct ProteinView: UIViewRepresentable {
 		context.coordinator.scnView = scnView
 
 		DispatchQueue.main.async {
-			captureImage(context: context)
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+				captureImage(context: context)
+			}
 		}
 
 		return scnView

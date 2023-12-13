@@ -35,7 +35,7 @@ struct ListLigandsView: View {
 						}
 					}.listStyle(.plain)
 						.padding()
-				}.navigationTitle("TEST")
+				}.navigationTitle("Ligands")
 			}.searchable(text: $searchText)
 		}
 		.onAppear {
