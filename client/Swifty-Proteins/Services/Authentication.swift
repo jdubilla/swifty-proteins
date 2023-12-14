@@ -41,7 +41,6 @@ class Authentication: ObservableObject {
 			if httpResponse.statusCode == 200 {
 				let decoder = JSONDecoder()
 				let tokenData = try decoder.decode(TokenResponse.self, from: data)
-				print(tokenData.token)
 				self.token = tokenData.token
 				DispatchQueue.main.async {
 					self.isAuthenticated = true
@@ -86,7 +85,6 @@ class Authentication: ObservableObject {
 			if httpResponse.statusCode == 200 {
 				let decoder = JSONDecoder()
 				let tokenData = try decoder.decode(TokenResponse.self, from: data)
-				print(tokenData.token)
 				self.token = tokenData.token
 				DispatchQueue.main.async {
 					self.isAuthenticated = true
@@ -100,7 +98,6 @@ class Authentication: ObservableObject {
 	}
 
 	func checkToken(token: String) async -> Bool {
-		print(token)
 		let endpoint = "\(baseUrl)/authentication/checkToken?token=\(token)"
 
 		guard let url = URL(string: endpoint) else {

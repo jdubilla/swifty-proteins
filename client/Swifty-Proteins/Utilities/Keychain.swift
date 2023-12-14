@@ -18,13 +18,10 @@ func saveTokenToKeychain(token: String) {
 		]
 
 		let deleteStatus = SecItemDelete(query as CFDictionary)
-		if deleteStatus != errSecSuccess && deleteStatus != errSecItemNotFound {
-			print("Erreur lors de la suppression de l'ancien token dans le Keychain")
-		}
 
 		let status = SecItemAdd(query as CFDictionary, nil)
 		if status != errSecSuccess {
-			print("Erreur lors de l'enregistrement du token dans le Keychain")
+			print("Error while saving the token to Keychain")
 		}
 	}
 }
@@ -43,7 +40,18 @@ func getTokenFromKeychain() -> String? {
 	if status == errSecSuccess, let retrievedData = dataTypeRef as? Data {
 		return String(data: retrievedData, encoding: .utf8)
 	} else {
-		print("Erreur lors de la récupération du token depuis le Keychain")
 		return nil
+	}
+}
+
+func deleteTokenFromKeychain() {
+	let query: [String: Any] = [
+		kSecClass as String: kSecClassGenericPassword,
+		kSecAttrAccount as String: "swiftyProteinsToken"
+	]
+
+	let status = SecItemDelete(query as CFDictionary)
+	if status != errSecSuccess && status != errSecItemNotFound {
+		print("Error while deleting the token from Keychain")
 	}
 }

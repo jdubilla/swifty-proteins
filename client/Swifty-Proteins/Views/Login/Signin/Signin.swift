@@ -18,8 +18,7 @@ struct Signin: View {
 	@State var asyncOperation = false
 	@State var errorMessage = ""
 	@State var showAlert = false
-
-	@State var test = false
+	@State var faceId = false
 
 	@Environment(\.scenePhase) private var scenePhase
 
@@ -58,7 +57,7 @@ struct Signin: View {
 			.frame(width: 300)
 			.background(disabledButton || asyncOperation ? .accent.opacity(0.7) : .accent)
 			.cornerRadius(50)
-			.disabled(disabledButton || asyncOperation)
+//			.disabled(disabledButton || asyncOperation)
 		}
 		.alert("Error", isPresented: $showAlert) {
 
@@ -66,8 +65,7 @@ struct Signin: View {
 			Text(errorMessage)
 		}
 		.onChange(of: scenePhase) { newPhase in
-			if newPhase == .active && test == false {
-				print("ACTIVE")
+			if newPhase == .active && faceId == false {
 				Task {
 					let token = getTokenFromKeychain()
 					if let token = token {
@@ -78,13 +76,12 @@ struct Signin: View {
 					}
 				}
 			} else if newPhase == .background || newPhase == .inactive {
-				test = false
+				faceId = false
 			}
 		}
 	}
 
 	func authenticate() {
-		print("authenticate()")
 		let context = LAContext()
 		var error: NSError?
 
@@ -96,15 +93,11 @@ struct Signin: View {
 					DispatchQueue.main.async {
 						authentication.isAuthenticated = true
 					}
-					print("authenticated successfully")
 				} else {
-					print("there was a problem")
-					test = true
+					faceId = true
 					return
 				}
 			}
-		} else {
-			print("no biometrics")
 		}
 	}
 

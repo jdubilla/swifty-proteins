@@ -35,6 +35,10 @@ struct ListLigandsView: View {
 						}
 					}.listStyle(.plain)
 						.padding()
+					Button("Logout") {
+						deleteTokenFromKeychain()
+						authentication.isAuthenticated = false
+					}.foregroundStyle(.red)
 				}.navigationTitle("Ligands")
 			}.searchable(text: $searchText)
 		}
@@ -55,10 +59,10 @@ struct ListLigandsView: View {
 				let ligands = fileContent.components(separatedBy: "\n")
 				return ligands
 			} catch {
-				print("Erreur de lecture du fichier : \(error.localizedDescription)")
+				print("Error reading file: \(error.localizedDescription)")
 			}
 		} else {
-			print("Fichier non trouvé")
+			print("File not found")
 		}
 		return []
 	}
