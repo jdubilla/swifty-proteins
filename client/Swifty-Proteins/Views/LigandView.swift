@@ -27,7 +27,7 @@ struct LigandView: View {
 				LoadingLigandView()
 			} else {
 				ZStack {
-					ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtom: $selectedAtom, sharedImage: $sharedImage)
+					Protein3D(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtom: $selectedAtom, sharedImage: $sharedImage)
 					HStack(alignment: .center) {
 						if let selectedAtom = selectedAtom {
 							Text("Selected Atom: \(selectedAtom.type) \(selectedAtom.id)")

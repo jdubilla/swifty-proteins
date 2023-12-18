@@ -16,6 +16,7 @@ class Ligands: ObservableObject {
 
 	func fetchLigandFile(ligandName: String) async throws -> String {
 		let endpoint = "https://files.rcsb.org/ligands/view/\(ligandName)_ideal.sdf"
+//		let endpoint = "https://files.rcsb.org/ligands/view/15P_ideal.sdf"
 
 		guard let url = URL(string: endpoint) else {
 			throw LigandError.invalidURL
@@ -97,20 +98,8 @@ class Ligands: ObservableObject {
 			} else if splitedLine.count == 6 {
 				if let stickyNumbers = Int(splitedLine[0]), let connectionType = Int(splitedLine[1]) {
 
-					var firstNumber = 0
-					var secondNumber = 0
-					let numberOfDigits = splitedLine[0].count
-
-//					if numberOfDigits == 4 {
-//						 firstNumber = stickyNumbers / 1000
-//						 secondNumber = stickyNumbers % 1000
-//					} else if numberOfDigits == 5 {
-//						 firstNumber = stickyNumbers / 1000
-//						 secondNumber = stickyNumbers % 1000
-//					} else if numberOfDigits == 6 {
-						 firstNumber = stickyNumbers / 1000
-						 secondNumber = stickyNumbers % 1000
-//					}
+						 let firstNumber = stickyNumbers / 1000
+						 let secondNumber = stickyNumbers % 1000
 					let connection: Connection = Connection(from: firstNumber, to: secondNumber, connectionType: connectionType)
 					connections.append(connection)
 				}
@@ -123,9 +112,6 @@ class Ligands: ObservableObject {
 		self.dataFile = try await fetchLigandFile(ligandName: ligandName)
 		self.atomsDatas = getLigandCoords(dataFile: dataFile)
 		self.connections = getConnections(dataFile: dataFile)
-//		print(self.connections)
-//		print(atomsDatas[63].x, atomsDatas[63].y, atomsDatas[63].z)
-//		print(atomsDatas[64].x, atomsDatas[64].y, atomsDatas[64].z)
 	}
 }
 
