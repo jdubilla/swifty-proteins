@@ -57,7 +57,7 @@ struct Signin: View {
 			.frame(width: 300)
 			.background(disabledButton || asyncOperation ? .accent.opacity(0.7) : .accent)
 			.cornerRadius(50)
-//			.disabled(disabledButton || asyncOperation)
+			.disabled(disabledButton || asyncOperation)
 		}
 		.alert("Error", isPresented: $showAlert) {
 

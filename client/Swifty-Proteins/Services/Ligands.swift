@@ -82,11 +82,36 @@ class Ligands: ObservableObject {
 		let splitedFile = dataFile.split(separator: "\n")
 
 		for index in 0...splitedFile.count - 1 {
+
+			if splitedFile[index] == "M  END" {
+				return connections
+			}
+
 			let splitedLine = splitedFile[index].split(separator: " ")
 
 			if splitedLine.count == 7 {
 				if let from = Int(splitedLine[0]), let to = Int(splitedLine[1]), let connectionType = Int(splitedLine[2]) {
 					let connection: Connection = Connection(from: from, to: to, connectionType: connectionType)
+					connections.append(connection)
+				}
+			} else if splitedLine.count == 6 {
+				if let stickyNumbers = Int(splitedLine[0]), let connectionType = Int(splitedLine[1]) {
+
+					var firstNumber = 0
+					var secondNumber = 0
+					let numberOfDigits = splitedLine[0].count
+
+//					if numberOfDigits == 4 {
+//						 firstNumber = stickyNumbers / 1000
+//						 secondNumber = stickyNumbers % 1000
+//					} else if numberOfDigits == 5 {
+//						 firstNumber = stickyNumbers / 1000
+//						 secondNumber = stickyNumbers % 1000
+//					} else if numberOfDigits == 6 {
+						 firstNumber = stickyNumbers / 1000
+						 secondNumber = stickyNumbers % 1000
+//					}
+					let connection: Connection = Connection(from: firstNumber, to: secondNumber, connectionType: connectionType)
 					connections.append(connection)
 				}
 			}
@@ -98,6 +123,9 @@ class Ligands: ObservableObject {
 		self.dataFile = try await fetchLigandFile(ligandName: ligandName)
 		self.atomsDatas = getLigandCoords(dataFile: dataFile)
 		self.connections = getConnections(dataFile: dataFile)
+//		print(self.connections)
+//		print(atomsDatas[63].x, atomsDatas[63].y, atomsDatas[63].z)
+//		print(atomsDatas[64].x, atomsDatas[64].y, atomsDatas[64].z)
 	}
 }
 

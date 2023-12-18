@@ -18,7 +18,7 @@ struct LigandView: View {
 	@State var errorMessage = ""
 	@State var isLoading = true
 	@State private var isSharing = false
-	@State private var selectedAtom: String?
+	@State private var selectedAtom: AtomDatas?
 	@State private var sharedImage: UIImage?
 
 	var body: some View {
@@ -27,10 +27,10 @@ struct LigandView: View {
 				LoadingLigandView()
 			} else {
 				ZStack {
-					ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtomType: $selectedAtom, sharedImage: $sharedImage)
+					ProteinView(atomsDatas: request.atomsDatas, connections: request.connections, selectedAtom: $selectedAtom, sharedImage: $sharedImage)
 					HStack(alignment: .center) {
 						if let selectedAtom = selectedAtom {
-							Text("Selected Atom: \(selectedAtom)")
+							Text("Selected Atom: \(selectedAtom.type) \(selectedAtom.id)")
 								.frame(height: 30)
 								.padding()
 								.background(.gray.opacity(0.7))

@@ -29,6 +29,7 @@ struct SigninSignupButtons: View {
 				Rectangle()
 					.frame(width: barWidth, height: 3)
 					.foregroundColor(Color(hex: fontColorButton))
+					.clipShape(RoundedRectangle(cornerRadius: 50))
 					.offset(x: barOffset - (geometry.size.width / 7), y: -13), alignment: .bottom
 			)
 			.frame(width: geometry.size.width, alignment: .center)
