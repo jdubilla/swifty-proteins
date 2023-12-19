@@ -6,6 +6,7 @@ Swifty Proteins est un projet développé dans le cadre du cursus de l'école 42
 - [Introduction](#introduction)
 - [Fonctionnalités](#fonctionnalités)
 - [Technologies Utilisées](#technologies)
+- [Présentation du projet](#presentation)
 
 <div id='introduction'/> 
 
@@ -17,7 +18,8 @@ L'objectif de Swifty Proteins est de fournir une interface intuitive permettant 
 
 ## Fonctionnalités
 
-- **Gestion des utilisateurs** : Utilisation d'un backend pour la gestion des utilisateurs
+- **Gestion des utilisateurs** : Utilisation d'un backend pour la gestion des utilisateurs.
+- **Connexion** : Utilisation de FaceID (ou TouchID) pour permettre de s'authentifier a chaque ouverture de l'application.
 - **Visualisation 3D** : Visualiser des molécules de protéines dans un espace tridimensionnel grace au framework SceneKit.
 - **Sélection de molécules** : Choisir parmi une variété de structures de protéines disponibles.
 - **Contrôles interactifs** : Zoomer, faire pivoter et explorer les molécules à l'aide de gestes intuitifs.
@@ -31,5 +33,15 @@ L'objectif de Swifty Proteins est de fournir une interface intuitive permettant 
 - **3D**: SceneKit
 - **Backend**: Node.js, Express.js
 - **Base de données**: MySQL
-- **Sécurité**: Keychain, JSON Web Tokens (JWT), bcrypt
+- **Sécurité**: FaceID, TouchID, Keychain, JSON Web Tokens (JWT), bcrypt
 - **Déploiement**: Docker (pour le backend et la base de données)
+
+<div id='presentation'/> 
+
+- ## Présentation du projet
+
+- Vidéo du projet :
+
+https://github.com/jdubilla/swifty-proteins/assets/86416832/5a7debaa-d835-4739-8d82-0cc593294460
+
+
