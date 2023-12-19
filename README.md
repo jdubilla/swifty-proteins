@@ -38,7 +38,7 @@ L'objectif de Swifty Proteins est de fournir une interface intuitive permettant 
 
 <div id='presentation'/> 
 
-- ## Présentation du projet
+## Présentation du projet
 
 - Vidéo du projet :
 
