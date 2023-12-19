@@ -24,6 +24,7 @@ struct SignupButton: View {
 				do {
 					asyncOperation = true
 					try await authentication.signup(username: username, password: password, confPassword: confPassword)
+					saveTokenToKeychain(token: authentication.token)
 					asyncOperation = false
 				} catch {
 					handleFetchError(error)

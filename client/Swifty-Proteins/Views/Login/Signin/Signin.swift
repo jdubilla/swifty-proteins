@@ -6,21 +6,17 @@
 //
 
 import SwiftUI
-import LocalAuthentication
 
 struct Signin: View {
 
 	@StateObject var authentication: Authentication
 
-	@State var username = "Bubonn"
-	@State var password = "aA!111"
+	@State var username = ""
+	@State var password = ""
 	@State var disabledButton = true
 	@State var asyncOperation = false
 	@State var errorMessage = ""
 	@State var showAlert = false
-	@State var faceId = false
-
-	@Environment(\.scenePhase) private var scenePhase
 
 	var body: some View {
 		VStack {
@@ -63,41 +59,6 @@ struct Signin: View {
 
 		} message: {
 			Text(errorMessage)
-		}
-		.onChange(of: scenePhase) { newPhase in
-			if newPhase == .active && faceId == false {
-				Task {
-					let token = getTokenFromKeychain()
-					if let token = token {
-						let isValidToken = await authentication.checkToken(token: token)
-						if isValidToken {
-							authenticate()
-						}
-					}
-				}
-			} else if newPhase == .background || newPhase == .inactive {
-				faceId = false
-			}
-		}
-	}
-
-	func authenticate() {
-		let context = LAContext()
-		var error: NSError?
-
-		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-			let reason = "We need to unlock your data."
-
-			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
-				if success {
-					DispatchQueue.main.async {
-						authentication.isAuthenticated = true
-					}
-				} else {
-					faceId = true
-					return
-				}
-			}
 		}
 	}
 

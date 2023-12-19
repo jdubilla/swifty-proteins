@@ -31,15 +31,13 @@ struct PasswordFields: View {
 				.foregroundColor(.gray)
 				.font(.caption)
 				.fontWeight(.bold)
-			CheckSignupField(condition: $isPasswordMinValid, conditionName: "One lowercase")
-			CheckSignupField(condition: $isPasswordMajValid, conditionName: "One uppercase")
-			CheckSignupField(condition: $isPasswordSpecialCharValid, conditionName: "One special charactere")
-			CheckSignupField(condition: $isPasswordNumberValid, conditionName: "One number")
-			CheckSignupField(condition: $isPasswordLenValid, conditionName: "6 characteres")
-			CheckSignupField(condition: $isSamePasswordValid, conditionName: "Passwords must match")
+				CheckSignupField(condition: $isPasswordMinValid, conditionName: "One lowercase")
+				CheckSignupField(condition: $isPasswordMajValid, conditionName: "One uppercase")
+				CheckSignupField(condition: $isPasswordSpecialCharValid, conditionName: "One special charactere")
+				CheckSignupField(condition: $isPasswordNumberValid, conditionName: "One number")
+				CheckSignupField(condition: $isPasswordLenValid, conditionName: "6 characteres")
+				CheckSignupField(condition: $isSamePasswordValid, conditionName: "Passwords must match")
 		}
-		Spacer()
-			.frame(height: 15)
 	}
 
 	func checkPasswordField(newValue: String) {
