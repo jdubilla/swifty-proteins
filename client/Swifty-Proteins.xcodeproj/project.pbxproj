@@ -34,7 +34,7 @@
 		29882CB02B23726800A32358 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CAF2B23726800A32358 /* Signup.swift */; };
 		2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8092B18D15E0005B3E8 /* Ligands.swift */; };
 		2998C80D2B1916930005B3E8 /* AtomDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C80C2B1916930005B3E8 /* AtomDatas.swift */; };
-		2998C8162B1938750005B3E8 /* Protein3DV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* Protein3DV.swift */; };
+		2998C8162B1938750005B3E8 /* Protein3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998C8152B1938750005B3E8 /* Protein3D.swift */; };
 		29A70E372B29E18F0065617C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A70E362B29E18F0065617C /* Launch Screen.storyboard */; };
 		29A70E392B29ECF30065617C /* LoadingLigandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A70E382B29ECF30065617C /* LoadingLigandView.swift */; };
 		29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */; };
@@ -90,7 +90,7 @@
 		29882CAF2B23726800A32358 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2998C8092B18D15E0005B3E8 /* Ligands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligands.swift; sourceTree = "<group>"; };
 		2998C80C2B1916930005B3E8 /* AtomDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDatas.swift; sourceTree = "<group>"; };
-		2998C8152B1938750005B3E8 /* Protein3DV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protein3DV.swift; sourceTree = "<group>"; };
+		2998C8152B1938750005B3E8 /* Protein3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protein3D.swift; sourceTree = "<group>"; };
 		29A70E352B29E0BE0065617C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A70E362B29E18F0065617C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		29A70E382B29ECF30065617C /* LoadingLigandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLigandView.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			children = (
 				29882CA42B2358BF00A32358 /* Login */,
 				292DC5512B17A35D0052D096 /* ContentView.swift */,
-				2998C8152B1938750005B3E8 /* Protein3DV.swift */,
+				2998C8152B1938750005B3E8 /* Protein3D.swift */,
 				2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */,
 				2952ADEF2B1BC8B8008C205F /* LigandView.swift */,
 				29A70E382B29ECF30065617C /* LoadingLigandView.swift */,
@@ -465,7 +465,7 @@
 				29882CAE2B23725F00A32358 /* Signin.swift in Sources */,
 				29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */,
 				2998C80A2B18D15E0005B3E8 /* Ligands.swift in Sources */,
-				2998C8162B1938750005B3E8 /* Protein3DV.swift in Sources */,
+				2998C8162B1938750005B3E8 /* Protein3D.swift in Sources */,
 				290AEDF42B2757F0001984FB /* UsernameTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
