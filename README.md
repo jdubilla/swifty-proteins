@@ -1,4 +1,4 @@
-# Pwifty-Proteins
+# Swifty-Proteins
 
 Swifty Proteins est un projet développé dans le cadre du cursus de l'école 42. Il s'agit de créer une application mobile permettant aux utilisateurs de visualiser des molécules en 3D, à partir de données téléchargées depuis la Protein Data Bank (PDB) via leur format de fichier .sdf.
 
