@@ -37,7 +37,7 @@ L'objectif de Swifty Proteins est de fournir une interface intuitive permettant 
 - **3D**: SceneKit
 - **Backend**: Node.js, Express.js
 - **Base de données**: MySQL
-- **Sécurité**: FaceID, TouchID, Keychain, JSON Web Tokens (JWT), bcrypt
+- **Sécurité**: FaceID, TouchID, Keychain, JSON Web Tokens (JWT), argon2
 - **Déploiement**: Docker (pour le backend et la base de données)
 
 
