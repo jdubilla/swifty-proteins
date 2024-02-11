@@ -11,7 +11,6 @@ struct LoginSecureField: View {
 
 	var placeholder: String
 	@Binding var value: String
-//	@State var displayValue = ""
 
 	var body: some View {
 		SecureField("", text: $value, prompt: Text("\(placeholder)").foregroundColor(.blue))

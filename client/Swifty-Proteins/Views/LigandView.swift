@@ -20,6 +20,7 @@ struct LigandView: View {
 	@State private var isSharing = false
 	@State private var selectedAtom: AtomDatas?
 	@State private var sharedImage: UIImage?
+    @Environment(\.presentationMode) var presentationMode
 
 	var body: some View {
 		VStack {
@@ -85,7 +86,7 @@ struct LigandView: View {
 			print("Invalid data")
 			errorMessage = "Invalid data"
 		case LigandError.invalidReponse:
-			errorMessage = "Invalid response"
+			errorMessage = "Invalid response or molecule not found"
 			print("Invalid response")
 		case LigandError.invalidURL:
 			errorMessage = "Invalid URL"
@@ -93,7 +94,10 @@ struct LigandView: View {
 		default:
 			errorMessage = "Invalid URL \(error.localizedDescription)"
 		}
-		showAlert.toggle()
+        self.presentationMode.wrappedValue.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.showAlert.toggle()
+        }
 	}
 }
 
@@ -110,6 +114,6 @@ struct ActivityViewController: UIViewControllerRepresentable {
 	}
 
 	func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-		// Update the view controller if needed
-	}
+
+    }
 }

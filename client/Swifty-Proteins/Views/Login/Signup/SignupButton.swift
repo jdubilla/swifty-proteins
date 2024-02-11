@@ -44,19 +44,6 @@ struct SignupButton: View {
 		.cornerRadius(50)
 		.disabled(disabledBtn || asyncOperation)
 	}
-//
-//	func disabledButton() -> Bool {
-//		return(
-//			!isUsernameValid ||
-//			!isPasswordLenValid ||
-//			!isSamePasswordValid ||
-//			!isPasswordSpecialCharValid ||
-//			!isPasswordMinValid ||
-//			!isPasswordMajValid ||
-//			!isPasswordNumberValid ||
-//			disabledBtn
-//		)
-//	}
 
 	func handleFetchError(_ error: Error) {
 		switch error {

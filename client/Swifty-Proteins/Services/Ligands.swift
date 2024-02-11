@@ -16,7 +16,6 @@ class Ligands: ObservableObject {
 
 	func fetchLigandFile(ligandName: String) async throws -> String {
 		let endpoint = "https://files.rcsb.org/ligands/view/\(ligandName)_ideal.sdf"
-//		let endpoint = "https://files.rcsb.org/ligands/view/15P_ideal.sdf"
 
 		guard let url = URL(string: endpoint) else {
 			throw LigandError.invalidURL

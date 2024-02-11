@@ -22,7 +22,6 @@
 		292DC56D2B17A35E0052D096 /* Swifty_ProteinsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DC56C2B17A35E0052D096 /* Swifty_ProteinsUITestsLaunchTests.swift */; };
 		2952ADEE2B1BC2DA008C205F /* ListLigandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */; };
 		2952ADF02B1BC8B8008C205F /* LigandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952ADEF2B1BC8B8008C205F /* LigandView.swift */; };
-		2952ADF32B1BD26E008C205F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2952ADF22B1BD253008C205F /* ligands.txt */; };
 		29882C9D2B2220A200A32358 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9C2B2220A200A32358 /* LoginView.swift */; };
 		29882CA02B2223CA00A32358 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */; };
 		29882CA32B23555A00A32358 /* ColorHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882CA22B23555A00A32358 /* ColorHexa.swift */; };
@@ -40,6 +39,7 @@
 		29BC1D492B248C7B00C8DE8B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */; };
 		29BC1D4B2B248D5100C8DE8B /* LoginSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */; };
 		29BC1D4D2B24A36700C8DE8B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1D4C2B24A36700C8DE8B /* Authentication.swift */; };
+		ED5057822B79737E00E5871C /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED5057812B79737E00E5871C /* ligands.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		292DC56C2B17A35E0052D096 /* Swifty_ProteinsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty_ProteinsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2952ADED2B1BC2DA008C205F /* ListLigandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLigandsView.swift; sourceTree = "<group>"; };
 		2952ADEF2B1BC8B8008C205F /* LigandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandView.swift; sourceTree = "<group>"; };
-		2952ADF22B1BD253008C205F /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		29882C9C2B2220A200A32358 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		29882C9F2B2223CA00A32358 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		29882CA22B23555A00A32358 /* ColorHexa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexa.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		29BC1D482B248C7B00C8DE8B /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		29BC1D4A2B248D5100C8DE8B /* LoginSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecureField.swift; sourceTree = "<group>"; };
 		29BC1D4C2B24A36700C8DE8B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		ED5057812B79737E00E5871C /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +219,7 @@
 		2952ADF12B1BD1F5008C205F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2952ADF22B1BD253008C205F /* ligands.txt */,
+				ED5057812B79737E00E5871C /* ligands.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -393,9 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				292DC5572B17A35E0052D096 /* Preview Assets.xcassets in Resources */,
-				2952ADF32B1BD26E008C205F /* ligands.txt in Resources */,
 				29A70E372B29E18F0065617C /* Launch Screen.storyboard in Resources */,
 				292DC5542B17A35E0052D096 /* Assets.xcassets in Resources */,
+				ED5057822B79737E00E5871C /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
