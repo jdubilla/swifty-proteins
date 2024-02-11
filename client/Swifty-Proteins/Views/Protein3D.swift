@@ -78,7 +78,6 @@ struct Protein3D: UIViewRepresentable {
 	}
 
 	func addAtomsToScene(scene: SCNScene) {
-//		for atomData in atomsDatas where atomData.type != "H" {
 		for atomData in atomsDatas {
 			let atomNode = createAtomNode(atomData: atomData)
 			atomNode.position = SCNVector3(
@@ -151,61 +150,28 @@ struct Protein3D: UIViewRepresentable {
 
 	}
 
-	func length(vector: SCNVector3) -> Float {
-		return sqrtf(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z)
-	}
-
-	//	func simpleConnection(fromAtom: AtomDatas, toAtom: AtomDatas, scene: SCNScene) {
-	//		let fromPosition = SCNVector3(fromAtom.x, fromAtom.y, fromAtom.z)
-	//		let toPosition = SCNVector3(toAtom.x, toAtom.y, toAtom.z)
-	//
-	//		let direction = SCNVector3(toPosition.x - fromPosition.x,
-	//								   toPosition.y - fromPosition.y,
-	//								   toPosition.z - fromPosition.z)
-	//
-	//		let distance = length(vector: direction)
-	//
-	//		let bondMaterialFirstHalf = SCNMaterial()
-	//		bondMaterialFirstHalf.diffuse.contents = fromAtom.color
-	//
-	//		let bondMaterialSecondHalf = SCNMaterial()
-	//		bondMaterialSecondHalf.diffuse.contents = toAtom.color
-	//
-	//		let halfPosition = SCNVector3(fromPosition.x + direction.x / 2.0,
-	//									  fromPosition.y + direction.y / 2.0,
-	//									  fromPosition.z + direction.z / 2.0)
-	//
-	//		let halfGeometry = SCNCylinder(radius: 0.3, height: CGFloat(distance))
-	//		halfGeometry.materials = [bondMaterialFirstHalf, bondMaterialSecondHalf]
-	//
-	//		let halfNode = SCNNode(geometry: halfGeometry)
-	//		let connectionParentNode = SCNNode()
-	//
-	//		scene.rootNode.addChildNode(connectionParentNode)
-	//		connectionParentNode.addChildNode(halfNode)
-	//
-	//		halfNode.position = halfPosition
-	//		halfNode.look(at: toPosition, up: direction, localFront: SCNVector3(0, 1, 0))
-	//	}
-
 	func simpleConnection(fromAtom: AtomDatas, toAtom: AtomDatas, scene: SCNScene) {
+        // Calculate positions of atoms
 		let fromPosition = SCNVector3(fromAtom.x, fromAtom.y, fromAtom.z)
 		let toPosition = SCNVector3(toAtom.x, toAtom.y, toAtom.z)
 
+        // Calculate the distance between the atoms
 		let deltaX = toPosition.x - fromPosition.x
 		let deltaY = toPosition.y - fromPosition.y
 		let deltaZ = toPosition.z - fromPosition.z
-
 		let distance = sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ)
 
+        // Calculate the midpoint between the atoms
 		let halfDistance = distance / 2.0
 
+        // Create materials for the connection halves
 		let bondMaterialFirstHalf = SCNMaterial()
 		bondMaterialFirstHalf.diffuse.contents = fromAtom.color
 
 		let bondMaterialSecondHalf = SCNMaterial()
 		bondMaterialSecondHalf.diffuse.contents = toAtom.color
 
+        // Calculate positions of the first and second halves of the connection
 		let firstHalfPosition = SCNVector3(
 			fromPosition.x + deltaX / 4,
 			fromPosition.y + deltaY / 4,
@@ -218,25 +184,29 @@ struct Protein3D: UIViewRepresentable {
 			fromPosition.z + deltaZ / 4 * 3
 		)
 
+        // Create geometries for the first and second halves of the connection
 		let firstHalfGeometry = SCNCylinder(radius: 0.3, height: CGFloat(halfDistance))
 		firstHalfGeometry.materials = [bondMaterialFirstHalf]
 
 		let secondHalfGeometry = SCNCylinder(radius: 0.3, height: CGFloat(halfDistance))
 		secondHalfGeometry.materials = [bondMaterialSecondHalf]
 
+        // Create nodes for the first and second halves of the connection
 		let firstHalfNode = SCNNode(geometry: firstHalfGeometry)
 		let secondHalfNode = SCNNode(geometry: secondHalfGeometry)
 
+        // Create a parent node for the connection
 		let connectionParentNode = SCNNode()
 
-//		scene.rootNode.addChildNode(connectionParentNode)
-
+        // Add the first and second halves to the parent node
 		connectionParentNode.addChildNode(firstHalfNode)
 		connectionParentNode.addChildNode(secondHalfNode)
 
+        // Set positions for the first and second halves
 		firstHalfNode.position = firstHalfPosition
 		secondHalfNode.position = secondHalfPosition
 
+        // Orient the first and second halves toward their respective atoms
 		let firstHalfDirection = SCNVector3(
 			firstHalfPosition.x - fromPosition.x,
 			firstHalfPosition.y - fromPosition.y,
@@ -252,6 +222,7 @@ struct Protein3D: UIViewRepresentable {
 		firstHalfNode.look(at: fromPosition, up: firstHalfDirection, localFront: SCNVector3(0, 1, 0))
 		secondHalfNode.look(at: toPosition, up: secondHalfDirection, localFront: SCNVector3(0, 1, 0))
 
+        // Add the parent node to the scene
 		scene.rootNode.addChildNode(connectionParentNode)
 	}
 
@@ -329,10 +300,6 @@ struct Protein3D: UIViewRepresentable {
 				  let toAtom = atomsDatas.first(where: { $0.id == connection.to }) else {
 				continue
 			}
-
-//			if fromAtom.type == "H" || toAtom.type == "H" {
-//				continue
-//			}
 
 			if connection.connectionType == 2 {
 				doubleConnection(fromAtom: fromAtom, toAtom: toAtom, scene: scene)

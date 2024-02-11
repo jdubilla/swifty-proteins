@@ -13,14 +13,14 @@ struct ContentView: View {
 	@StateObject var authentication = Authentication()
 
 	var body: some View {
-//		if !authentication.isAuthenticated {
-//			LoginView(authentication: authentication)
-//		} else {
+		if !authentication.isAuthenticated {
+			LoginView(authentication: authentication)
+		} else {
 			ListLigandsView(authentication: authentication)
-//		}
+		}
 	}
 }
 
-#Preview {
-	ContentView()
-}
+//#Preview {
+//	ContentView()
+//}
