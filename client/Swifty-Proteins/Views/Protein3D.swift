@@ -308,35 +308,4 @@ struct Protein3D: UIViewRepresentable {
 			}
 		}
 	}
-
-	func dotProduct(_ a: SCNVector3, _ b: SCNVector3) -> Float {
-		return a.x * b.x + a.y * b.y + a.z * b.z
-	}
-
-	func crossProduct(_ a: SCNVector3, _ b: SCNVector3) -> SCNVector3 {
-		return SCNVector3(a.y * b.z - a.z * b.y,
-						  a.z * b.x - a.x * b.z,
-						  a.x * b.y - a.y * b.x)
-	}
-}
-
-extension SCNVector3 {
-	func normalized() -> SCNVector3 {
-		let length = sqrt(x * x + y * y + z * z)
-		if length != 0.0 {
-			return SCNVector3(x / length, y / length, z / length)
-		} else {
-			return SCNVector3(0, 0, 0)
-		}
-	}
-
-	func angleAxis(angle: Float) -> SCNQuaternion {
-		let halfAngle = angle / 2.0
-		let axis = self.normalized()
-		let sinHalfAngle = sin(halfAngle)
-		return SCNQuaternion(x: axis.x * sinHalfAngle,
-							 y: axis.y * sinHalfAngle,
-							 z: axis.z * sinHalfAngle,
-							 w: cos(halfAngle))
-	}
 }
