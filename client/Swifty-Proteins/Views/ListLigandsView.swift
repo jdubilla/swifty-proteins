@@ -40,7 +40,9 @@ struct ListLigandsView: View {
 						authentication.isAuthenticated = false
 					}.foregroundStyle(.red)
 				}.navigationTitle("Ligands")
-			}.searchable(text: $searchText)
+			}
+            .searchable(text: $searchText)
+            .autocorrectionDisabled()
 		}
 		.onAppear {
 			self.listLigands = getListLigands()

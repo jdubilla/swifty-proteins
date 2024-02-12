@@ -130,7 +130,11 @@ struct Protein3D: UIViewRepresentable {
 		var cameraY = maxX - minX > maxY - minY ? maxX - minX : maxY - minY
 		cameraY = cameraY * 2 > 90 ? 90 : cameraY * 2
 
-		cameraNode.position = SCNVector3(moyX, moyY, self.atomsDatas[0].z + cameraY)
+        if atomsDatas.count == 1 {
+            cameraNode.position = SCNVector3(self.atomsDatas[0].x, self.atomsDatas[0].y, self.atomsDatas[0].z + 20)
+        } else {
+            cameraNode.position = SCNVector3(moyX, moyY, self.atomsDatas[0].z + cameraY)
+        }
 
 		scene.rootNode.addChildNode(cameraNode)
 		scnView.pointOfView = cameraNode
